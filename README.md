@@ -1,9 +1,9 @@
-## Introducing the EffortlessForm Component 🚀
+# Introducing the EffortlessForm Component 🚀
 
 **EffortlessForm** is a minimalist form component that comes with all the bells and whistles, pre-styled and ready for action. Whether you're a self-proclaimed member of the "Lazy Squad" or someone who values efficiency, this project is your time-saving partner. 💪
 Built with **Next.js**, **Mantine UI**, and **Tailwind CSS** 💻
 
-### How to Get Started 🚀
+## How to Get Started 🚀
 
 To begin, you have two options:
 
@@ -14,10 +14,11 @@ To begin, you have two options:
   git clone git@github.com:Amira-Chaabne/effortless_form.git
   ```
 
-###Preview and Feedback 🖥️
+## Preview and Feedback 🖥️
+
 EffortlessForm is deployed using **GitHub Pages**. Feel free to preview it and provide any feedback, suggestions, or fixes you might have.
 
-### Embrace Your Laziness, Wisely! 🛋️
+## Embrace Your Laziness, Wisely! 🛋️
 
 So ahead, flaunt your laziness proudly – because with EffortlessForm, being lazy and time-efficient go hand in hand.
 
