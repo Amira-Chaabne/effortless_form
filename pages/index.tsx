@@ -1,9 +1,9 @@
-import SignUp from "@/sections/SignUp";
+import Layout from "@/sections/Layout";
 
 export default function Home() {
   return (
-    <div className="bg-gray-100">
-      <SignUp />
+    <div className="bg-gray-300">
+      <Layout />
     </div>
   );
 }
