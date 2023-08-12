@@ -1,5 +1,3 @@
-import { Text } from "@mantine/core";
-import AlreadyMember from "../../components/AlreadyMember/AlreadyMember"
 import SignUp from "@/components/SignUp/SignUp";
 
 export default function Forms() {

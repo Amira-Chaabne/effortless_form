@@ -15,32 +15,24 @@ export default function InfoCarousel() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
 
   const slides = images.map((image) => (
-    <Carousel.Slide key={image}>
+    <Carousel.Slide key={image} className="relative w-full h-[96vh]">
       <Image
         src={image}
         alt={image}
-        height={650}
-        width={600}
-      />
-      {/* <Image
-        src={image}
-        alt={image}
-        height={650}
-        width={600}
-        className="rounded-full"
+        layout="fill"
         objectFit="cover"
-        placeholder="blur"
-      /> */}
- 
+        className="border rounded-md"
+      />
     </Carousel.Slide>
   ));
 
   return (
-    <div className="col-span-1 bg-white">
+    <div className="hidden md:block col-span-1 bg-white rounded-md">
       <Carousel
         mx="auto"
         withIndicators
         withControls={false}
+        loop
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
