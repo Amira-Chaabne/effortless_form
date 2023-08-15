@@ -1,21 +1,44 @@
 import { Text } from "@mantine/core";
-import Link from "next/link";
+import { useAuthContext } from "@/contexts/AuthContext";
+
+interface AuthLinkIterface {
+  switchForm: () => void;
+  text: string;
+  linkText: string;
+}
 
 export default function AlreadyMember({ flag }: { flag?: boolean }) {
+  const { switchForm } = useAuthContext();
+
   return (
     <div className="flex justify-end">
-      {
-        flag ?
-          <Text size="xs">
-            <span>Already a member? </span>
-            <Link href="#" className="font-bold text-teal-600 hover:text-teal-500 transition-colors">Sign in</Link>
-          </Text> :
-          <Text size="xs">
-            <span>Don't have an account yet? </span>
-            <Link href="#" className="font-bold text-teal-600 hover:text-teal-500 transition-colors">Sign Up Now</Link>
-          </Text>
-      }
-
+      {flag ? (
+        <AuthLink
+          switchForm={switchForm}
+          text="Already a member?"
+          linkText="Sign in"
+        />
+      ) : (
+        <AuthLink
+          switchForm={switchForm}
+          text="Don't have an account yet?"
+          linkText="Sign up now"
+        />
+      )}
     </div>
+  );
+}
+
+function AuthLink({ switchForm, text, linkText }: AuthLinkIterface) {
+  return (
+    <Text size="xs" className="cursor-pointer">
+      <span>{text}</span>{" "}
+      <a
+        onClick={switchForm}
+        className="font-medium text-teal-600 hover:text-teal-500 transition-colors"
+      >
+        {linkText}
+      </a>
+    </Text>
   );
 }
