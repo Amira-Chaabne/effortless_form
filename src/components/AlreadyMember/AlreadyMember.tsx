@@ -1,5 +1,6 @@
-import { useAppContext } from "@/contexts/AppContext";
+import AppContext, { useAppContext } from "@/contexts/AppContext";
 import { Text } from "@mantine/core";
+import { useContext } from "react";
 
 interface AuthLinkIterface {
   switchForm: () => void;
