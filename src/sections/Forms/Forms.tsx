@@ -1,8 +1,8 @@
 import SignIn from "@/components/SignIn/SignIn";
 import SignUp from "@/components/SignUp/SignUp";
-import { AuthContext } from "@/contexts/AuthContext";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { AppContext } from "@/contexts/AppContext";
 
 export default function Forms() {
   const [isSigningUp, setIsSigningUp] = useState(true);
@@ -12,7 +12,7 @@ export default function Forms() {
   };
 
   return (
-    <AuthContext.Provider value={{ isSigningUp, switchForm }}>
+    <AppContext.Provider value={{ isSigningUp, switchForm }}>
       <div className="col-span-4 md:col-span-3 p-4 bg-white rounded-md py-12">
         <AnimatePresence mode="wait">
           {isSigningUp ? (
@@ -38,6 +38,6 @@ export default function Forms() {
           )}
         </AnimatePresence>
       </div>
-    </AuthContext.Provider>
+    </AppContext.Provider>
   );
 }

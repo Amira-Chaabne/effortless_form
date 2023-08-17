@@ -1,5 +1,5 @@
+import { useAppContext } from "@/contexts/AppContext";
 import { Text } from "@mantine/core";
-import { useAuthContext } from "@/contexts/AuthContext";
 
 interface AuthLinkIterface {
   switchForm: () => void;
@@ -8,7 +8,7 @@ interface AuthLinkIterface {
 }
 
 export default function AlreadyMember({ flag }: { flag?: boolean }) {
-  const { switchForm } = useAuthContext();
+  const { switchForm } = useAppContext();
 
   return (
     <div className="flex justify-end">
