@@ -6,6 +6,7 @@ import {
   PasswordInput,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { notifications } from "@mantine/notifications";
 
 interface FormValues {
   email: string;
@@ -31,6 +32,12 @@ export function SignInForm() {
 
   function handleForm(values: FormValues) {
     console.log(values);
+    notifications.show({
+      title: "Welcome on board",
+      message:
+        "you signIn successfully and your data are in the console ready to be shipped to your backend :)",
+      color: "green",
+    });
     form.reset();
   }
 
