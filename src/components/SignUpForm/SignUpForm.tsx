@@ -55,9 +55,9 @@ export default function SignUpForm() {
   function handleForm(values: FormValues) {
     console.log(values);
     notifications.show({
-      title: "Welcome on board",
+      title: "Welcome on board!",
       message:
-        "you signUp successfully and your data are in the console ready to be shipped to your backend :)",
+        "You have successfully signed up, and your data is now in the console, ready to be shipped to your backend :)",
       color: "green",
     });
     form.reset();

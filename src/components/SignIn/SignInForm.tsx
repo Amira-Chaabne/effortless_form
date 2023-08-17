@@ -33,9 +33,9 @@ export function SignInForm() {
   function handleForm(values: FormValues) {
     console.log(values);
     notifications.show({
-      title: "Welcome on board",
+      title: "Welcome on board!",
       message:
-        "you signIn successfully and your data are in the console ready to be shipped to your backend :)",
+        "You have successfully signed in, and your data is now in the console, ready to be shipped to your backend :)",
       color: "green",
     });
     form.reset();
