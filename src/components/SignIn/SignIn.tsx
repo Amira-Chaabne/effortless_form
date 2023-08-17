@@ -2,7 +2,7 @@ import { Text } from "@mantine/core";
 import AlreadyMember from "../AlreadyMember/AlreadyMember";
 import { SignInForm } from "./SignInForm";
 import { useAppContext } from "@/contexts/AppContext";
-import Appreciation from "../Appreciation/Appreciation";
+import Appreciation from "../Appreciation";
 
 export default function SignIn() {
   const { formSubmitted } = useAppContext();

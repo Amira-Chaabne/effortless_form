@@ -1,7 +1,7 @@
 import { Text } from "@mantine/core";
 import AlreadyMember from "../AlreadyMember/AlreadyMember";
 import SignUpForm from "../SignUpForm/SignUpForm";
-import Appreciation from "../Appreciation/Appreciation";
+import Appreciation from "../Appreciation";
 import { useAppContext } from "@/contexts/AppContext";
 
 export default function SignUp() {
