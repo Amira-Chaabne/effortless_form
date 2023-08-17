@@ -1,11 +1,7 @@
 import SignIn from "@/components/SignIn/SignIn";
 import SignUp from "@/components/SignUp/SignUp";
-import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import AppContext, {
-  AppContextProvider,
-  useAppContext,
-} from "@/contexts/AppContext";
+import { useAppContext } from "@/contexts/AppContext";
 
 export default function Forms() {
   const { isSigningUp } = useAppContext();

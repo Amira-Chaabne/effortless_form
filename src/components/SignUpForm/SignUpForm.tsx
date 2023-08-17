@@ -1,3 +1,4 @@
+import { useAppContext } from "@/contexts/AppContext";
 import {
   TextInput,
   Checkbox,
@@ -18,6 +19,8 @@ interface FormValues {
 }
 
 export default function SignUpForm() {
+  const { setFormSubmitted } = useAppContext();
+
   const form = useForm<FormValues>({
     initialValues: {
       email: "",
@@ -61,6 +64,7 @@ export default function SignUpForm() {
       color: "green",
     });
     form.reset();
+    setFormSubmitted(true);
   }
 
   return (

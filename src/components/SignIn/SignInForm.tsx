@@ -1,3 +1,4 @@
+import { useAppContext } from "@/contexts/AppContext";
 import {
   TextInput,
   Checkbox,
@@ -15,6 +16,8 @@ interface FormValues {
 }
 
 export function SignInForm() {
+  const { setFormSubmitted } = useAppContext();
+
   const form = useForm<FormValues>({
     initialValues: {
       email: "",
@@ -39,37 +42,36 @@ export function SignInForm() {
       color: "green",
     });
     form.reset();
+    setFormSubmitted(true);
   }
 
   return (
-    <div>
-      <form onSubmit={form.onSubmit((values) => handleForm(values))}>
-        <TextInput
-          withAsterisk
-          label="Email Address"
-          placeholder="Your Email"
-          {...form.getInputProps("email")}
-          className="mb-4"
-        />
-        <PasswordInput
-          placeholder="********"
-          label="Password"
-          {...form.getInputProps("password")}
-          withAsterisk
-        />
-        <Checkbox
-          mt="sm"
-          size="xs"
-          label="Keep me signed in"
-          {...form.getInputProps("signedIn", { type: "checkbox" })}
-        />
+    <form onSubmit={form.onSubmit((values) => handleForm(values))}>
+      <TextInput
+        withAsterisk
+        label="Email Address"
+        placeholder="Your Email"
+        {...form.getInputProps("email")}
+        className="mb-4"
+      />
+      <PasswordInput
+        placeholder="********"
+        label="Password"
+        {...form.getInputProps("password")}
+        withAsterisk
+      />
+      <Checkbox
+        mt="sm"
+        size="xs"
+        label="Keep me signed in"
+        {...form.getInputProps("signedIn", { type: "checkbox" })}
+      />
 
-        <Group position="right" mt="md">
-          <Button type="submit" color="dark">
-            Sign Up
-          </Button>
-        </Group>
-      </form>
-    </div>
+      <Group position="right" mt="md">
+        <Button type="submit" color="dark">
+          Sign Up
+        </Button>
+      </Group>
+    </form>
   );
 }
