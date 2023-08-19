@@ -19,7 +19,7 @@ interface FormValues {
 }
 
 export default function SignUpForm() {
-  const { setFormSubmitted } = useAppContext();
+  const { setFormSubmitted, setEmail } = useAppContext();
 
   const form = useForm<FormValues>({
     initialValues: {
@@ -64,6 +64,7 @@ export default function SignUpForm() {
       color: "green",
     });
     form.reset();
+    setEmail(values.email);
     setFormSubmitted(true);
   }
 

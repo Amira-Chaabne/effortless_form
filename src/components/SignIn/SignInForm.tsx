@@ -16,7 +16,7 @@ interface FormValues {
 }
 
 export function SignInForm() {
-  const { setFormSubmitted } = useAppContext();
+  const { setFormSubmitted, setEmail } = useAppContext();
 
   const form = useForm<FormValues>({
     initialValues: {
@@ -38,10 +38,11 @@ export function SignInForm() {
     notifications.show({
       title: "Welcome on board!",
       message:
-        "You have successfully signed in, and your data is now in the console, ready to be shipped to your backend :)",
+        "Your data is now in the console, ready to be shipped to your backend :)",
       color: "green",
     });
     form.reset();
+    setEmail(values.email);
     setFormSubmitted(true);
   }
 

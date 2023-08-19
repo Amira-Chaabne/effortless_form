@@ -10,7 +10,7 @@ export default function SignUp() {
   return (
     <>
       {formSubmitted ? (
-        <Appreciation />
+        <Appreciation signIn={false} />
       ) : (
         <>
           <AlreadyMember flag={true} />

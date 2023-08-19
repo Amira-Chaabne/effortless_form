@@ -10,8 +10,10 @@ import {
 export interface AppContext {
   isSigningUp: boolean;
   formSubmitted: boolean;
+  email: string;
   setIsSigningUp: Dispatch<SetStateAction<boolean>>;
   setFormSubmitted: Dispatch<SetStateAction<boolean>>;
+  setEmail: Dispatch<SetStateAction<string>>;
   switchForm: () => void;
 }
 
@@ -20,6 +22,7 @@ const AppContext = createContext<AppContext | undefined>(undefined);
 export function AppContextProvider({ children }: { children: ReactNode }) {
   const [isSigningUp, setIsSigningUp] = useState<boolean>(true);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
 
   const switchForm = () => {
     setIsSigningUp(!isSigningUp);
@@ -33,6 +36,8 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         switchForm,
         formSubmitted,
         setFormSubmitted,
+        email,
+        setEmail,
       }}
     >
       {children}
