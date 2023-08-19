@@ -1,24 +1,21 @@
-import { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
+import road from "../../../public/assets/images/calm_peaceful_road.jpg";
+import stars from "../../../public/assets/images/stars_cold_night.jpg";
+import wave from "../../../public/assets/images/wave_in_rocks.jpg";
 
 const images = [
-  "https://images.unsplash.com/photo-1560759226-14da22a643ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=800",
-  "https://images.unsplash.com/photo-1551509134-eb7c5ea9ad2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1516410529446-2c777cb7366d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1529651121800-01d45d421ec9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80",
+  { src: road, alt: "calm_peaceful_road" },
+  { src: stars, alt: "stars_cols_night" },
+  { src: wave, alt: "wave_in_rocks" },
 ];
 
 export default function InfoCarousel() {
-  const autoplay = useRef(Autoplay({ delay: 5000 }));
-
   const slides = images.map((image) => (
-    <Carousel.Slide key={image} className="relative w-full h-[96vh]">
+    <Carousel.Slide key={image.alt} className="relative w-full h-[96vh]">
       <Image
-        src={image}
-        alt={image}
+        src={image.src}
+        alt={image.alt}
         layout="fill"
         objectFit="cover"
         className="border rounded-md"
@@ -28,15 +25,7 @@ export default function InfoCarousel() {
 
   return (
     <div className="hidden md:block col-span-1 bg-white rounded-md">
-      <Carousel
-        mx="auto"
-        withIndicators
-        withControls={false}
-        loop
-        plugins={[autoplay.current]}
-        onMouseEnter={autoplay.current.stop}
-        onMouseLeave={autoplay.current.reset}
-      >
+      <Carousel mx="auto" withIndicators withControls={false} loop>
         {slides}
       </Carousel>
     </div>
