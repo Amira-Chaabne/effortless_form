@@ -1,3 +1,56 @@
 {
-  "create_account": "Créer un Compte"
+  "create_account": "Créer un compte",
+  "slides": {
+    "road": {
+      "title": "Augmentation des Émissions de Carbone",
+      "desc": "Chaque année, les activités humaines rejettent plus de 40 milliards de tonnes de dioxyde de carbone dans l'atmosphère, exacerbant le réchauffement climatique et provoquant des événements climatiques extrêmes."
+    },
+    "stars": {
+      "title": "Accélération de la Perte de Biodiversité",
+      "desc": "En raison de la destruction des habitats et du changement climatique, les espèces s'éteignent à un rythme 1 000 fois plus rapide que le taux naturel, mettant en péril les écosystèmes et la sécurité alimentaire."
+    },
+    "wave": {
+      "title": "Fonte des Glaces Polaires",
+      "desc": "Les glaces polaires disparaissent à un rythme alarmant, l'Arctique perdant 12,8 % de sa couverture de glace chaque décennie. Cela contribue à l'élévation du niveau de la mer et menace les communautés côtières."
+    }
+  },
+  "email_sent": "Nous avons envoyé un e-mail de confirmation à",
+  "thanks_for": "Merci pour {{action}} !",
+  "signing_in": "votre connexion",
+  "signing_up": "votre inscription",
+  "already_member": "Déjà membre ?",
+  "dont_have_account": "Vous n'avez pas encore de compte ?",
+  "sign_in": "Se connecter",
+  "sign_up": "S'inscrire maintenant",
+  "notification": {
+    "sign_up": {
+      "title": "Bienvenue à bord !",
+      "message": "Vous vous êtes inscrit avec succès, vos données sont maintenant dans la console, prêtes à être envoyées à votre backend :)"
+    },
+    "sign_in": {
+      "title": "Bienvenue à bord !",
+      "message": "Vous vous êtes connecté avec succès, vos données sont maintenant dans la console, prêtes à être envoyées à votre backend :)"
+    }
+  },
+  "firstname_label": "Prénom",
+  "firstname_placeholder": "Votre prénom",
+  "lastname_label": "Nom de famille",
+  "lastname_placeholder": "Votre nom de famille",
+  "email_label": "Adresse e-mail",
+  "email_placeholder": "Votre adresse e-mail",
+  "password": "Mot de passe",
+  "confirm_password": "Confirmer le mot de passe",
+  "privacy_label": "En vous inscrivant, vous acceptez nos conditions et notre politique de confidentialité.",
+  "sign_up_benefits": "Inscrivez-vous pour accéder à la vente en avant-première ainsi qu'aux nouvelles arrivées et promotions sur mesure.",
+  "keep_signed_in": "Rester connecté",
+  "sign_up_btn": "S'inscrire",
+  "sign_in_btn": "Se connecter",
+  "sign_in_title": "Se connecter pour aider à préserver la nature",
+  "validation": {
+    "invalid_email": "Adresse e-mail invalide",
+    "required_field": "Ce champ est obligatoire",
+    "required_terms": "Vous devez accepter les conditions et la politique de confidentialité",
+    "password_match": "Les mots de passe ne correspondent pas",
+    "password_validation": "Le mot de passe doit comporter au moins huit caractères, au moins une lettre et un chiffre."
+  }
 }

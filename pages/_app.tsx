@@ -12,7 +12,7 @@ function App(props: AppProps) {
   return (
     <>
       <Head>
-        <title>Sign Form page</title>
+        <title>Effortless Form</title>
       </Head>
       <MantineProvider
         withGlobalStyles

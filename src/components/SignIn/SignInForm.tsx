@@ -8,6 +8,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { notifications } from "@mantine/notifications";
+import { useTranslation } from "next-i18next";
 
 interface FormValues {
   email: string;
@@ -16,6 +17,7 @@ interface FormValues {
 }
 
 export function SignInForm() {
+  const { t } = useTranslation();
   const { setFormSubmitted, setEmail } = useAppContext();
 
   const form = useForm<FormValues>({
@@ -27,18 +29,17 @@ export function SignInForm() {
 
     validate: {
       email: (value) =>
-        /^\S+@\S+$/.test(value) ? null : "Invalid email address",
+        /^\S+@\S+$/.test(value) ? null : t("validation.invalid_email"),
 
-      password: (value) => (!value ? "This field is required" : null),
+      password: (value) => (!value ? t("validation.required_field") : null),
     },
   });
 
   function handleForm(values: FormValues) {
     console.log(values);
     notifications.show({
-      title: "Welcome on board!",
-      message:
-        "Your data is now in the console, ready to be shipped to your backend :)",
+      title: t("notification.sign_in.title"),
+      message: t("notification.sign_in.message"),
       color: "green",
     });
     form.reset();
@@ -50,27 +51,27 @@ export function SignInForm() {
     <form onSubmit={form.onSubmit((values) => handleForm(values))}>
       <TextInput
         withAsterisk
-        label="Email Address"
-        placeholder="Your Email"
+        label={t("email_label")}
+        placeholder={t("email_placeholder")}
         {...form.getInputProps("email")}
         className="mb-4"
       />
       <PasswordInput
         placeholder="********"
-        label="Password"
+        label={t("password")}
         {...form.getInputProps("password")}
         withAsterisk
       />
       <Checkbox
         mt="sm"
         size="xs"
-        label="Keep me signed in"
+        label={t("keep_signed_in")}
         {...form.getInputProps("signedIn", { type: "checkbox" })}
       />
 
       <Group position="right" mt="md">
         <Button type="submit" color="dark">
-          Sign Up
+          {t("sign_in_btn")}
         </Button>
       </Group>
     </form>

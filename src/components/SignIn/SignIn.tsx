@@ -4,8 +4,10 @@ import { SignInForm } from "./SignInForm";
 import { useAppContext } from "@/contexts/AppContext";
 import Appreciation from "../Appreciation";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 export default function SignIn() {
+  const { t } = useTranslation();
   const { formSubmitted } = useAppContext();
 
   return (
@@ -27,7 +29,7 @@ export default function SignIn() {
           <AlreadyMember />
           <div className="w-full md:max-w-2xl mx-auto">
             <Text className="text-3xl font-bold my-12">
-              Sign In to Help Save Nature
+              {t("sign_in_title")}
             </Text>
             <SignInForm />
           </div>

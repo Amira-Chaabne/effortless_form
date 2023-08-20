@@ -1,8 +1,10 @@
 import { useAppContext } from "@/contexts/AppContext";
 import { Group, Indicator, Text } from "@mantine/core";
 import { IconMailFilled, IconCheck } from "@tabler/icons-react";
+import { useTranslation } from "next-i18next";
 
 export default function Appreciation({ signIn }: { signIn: boolean }) {
+  const { t } = useTranslation();
   const { email } = useAppContext();
 
   return (
@@ -18,11 +20,11 @@ export default function Appreciation({ signIn }: { signIn: boolean }) {
         </Indicator>
       </Group>
       <Text className="text-2xl md:text-4xl mb-6 font-bold text-center">
-        Thank you for {signIn ? "signing in" : "signing up"}!
+        {t("thanks_for", {
+          action: signIn ? t("signing_in") : t("signing_up"),
+        })}
       </Text>
-      <Text className="text-sm text-gray-500">
-        We have sent a confirmation email to
-      </Text>
+      <Text className="text-sm text-gray-500">{t("email_sent")}</Text>
       <Text className="text-sm text-cyan-600">{email}</Text>
     </div>
   );

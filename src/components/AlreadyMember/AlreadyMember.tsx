@@ -1,6 +1,7 @@
 import AppContext, { useAppContext } from "@/contexts/AppContext";
 import { Text } from "@mantine/core";
 import { useContext } from "react";
+import { useTranslation } from "next-i18next";
 
 interface AuthLinkIterface {
   switchForm: () => void;
@@ -9,6 +10,7 @@ interface AuthLinkIterface {
 }
 
 export default function AlreadyMember({ flag }: { flag?: boolean }) {
+  const { t } = useTranslation();
   const { switchForm } = useAppContext();
 
   return (
@@ -16,14 +18,14 @@ export default function AlreadyMember({ flag }: { flag?: boolean }) {
       {flag ? (
         <AuthLink
           switchForm={switchForm}
-          text="Already a member?"
-          linkText="Sign in"
+          text={t("already_member")}
+          linkText={t("sign_in")}
         />
       ) : (
         <AuthLink
           switchForm={switchForm}
-          text="Don't have an account yet?"
-          linkText="Sign up now"
+          text={t("dont_have_account")}
+          linkText={t("sign_up")}
         />
       )}
     </div>

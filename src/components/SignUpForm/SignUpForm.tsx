@@ -8,6 +8,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { notifications } from "@mantine/notifications";
+import { useTranslation } from "next-i18next";
 
 interface FormValues {
   email: string;
@@ -19,6 +20,7 @@ interface FormValues {
 }
 
 export default function SignUpForm() {
+  const { t } = useTranslation();
   const { setFormSubmitted, setEmail } = useAppContext();
 
   const form = useForm<FormValues>({
@@ -33,34 +35,33 @@ export default function SignUpForm() {
 
     validate: {
       email: (value) =>
-        /^\S+@\S+$/.test(value) ? null : "Invalid email address",
-      firstName: (value) => (value ? null : "This field is required"),
+        /^\S+@\S+$/.test(value) ? null : t("validation.invalid_email"),
+      firstName: (value) => (value ? null : t("validation.required_field")),
 
       password: (value) =>
         !value
-          ? "This field is required"
+          ? t("validation.required_field")
           : !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(value)
-          ? "Password must have minimum eight characters, at least one letter and one number."
+          ? t("password_validation")
           : null,
 
       confirmPassword: (value, values) =>
         !value
-          ? "This field is required"
+          ? t("validation.required_field")
           : value !== values.password
-          ? "Passwords do not match"
+          ? t("password_match")
           : null,
 
       termsAndPrivacy: (value) =>
-        value ? null : "You must agree to the terms and privacy policy",
+        value ? null : t("validation.required_terms"),
     },
   });
 
   function handleForm(values: FormValues) {
     console.log(values);
     notifications.show({
-      title: "Welcome on board!",
-      message:
-        "You have successfully signed up, and your data is now in the console, ready to be shipped to your backend :)",
+      title: t("notification.sign_up.title"),
+      message: t("notification.sign_up.message"),
       color: "green",
     });
     form.reset();
@@ -74,21 +75,21 @@ export default function SignUpForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <TextInput
             withAsterisk
-            label="First Name"
-            placeholder="Your first name"
+            label={t("firstname_label")}
+            placeholder={t("firstname_placeholder")}
             {...form.getInputProps("firstName")}
           />
           <TextInput
-            label="Last Name"
-            placeholder="Your last name"
+            label={t("lastname_label")}
+            placeholder={t("lastname_placeholder")}
             {...form.getInputProps("lastName")}
           />
         </div>
 
         <TextInput
           withAsterisk
-          label="Email Address"
-          placeholder="Your Email"
+          label={t("email_placeholder")}
+          placeholder={t("email_placeholder")}
           {...form.getInputProps("email")}
           className="mb-4"
         />
@@ -96,13 +97,13 @@ export default function SignUpForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <PasswordInput
             placeholder="********"
-            label="Password"
+            label={t("password")}
             {...form.getInputProps("password")}
             withAsterisk
           />
           <PasswordInput
             placeholder="********"
-            label="Confirm Password"
+            label={t("confirm_password")}
             {...form.getInputProps("confirmPassword")}
             withAsterisk
           />
@@ -111,20 +112,20 @@ export default function SignUpForm() {
         <div className="my-12">
           <Checkbox
             size="xs"
-            label="By regestering you agree with our Terms, Privacy, Policy."
+            label={t("privacy_label")}
             {...form.getInputProps("termsAndPrivacy", { type: "checkbox" })}
           />
 
           <Checkbox
             mt="sm"
             size="xs"
-            label="Sign up for early sale access plus tailored new arrivals and promotions."
+            label={t("sign_up_benefits")}
             {...form.getInputProps("ealySaleAccess", { type: "checkbox" })}
           />
         </div>
         <Group position="right" mt="md">
           <Button type="submit" color="dark">
-            Sign Up
+            {t("sign_up_btn")}
           </Button>
         </Group>
       </form>

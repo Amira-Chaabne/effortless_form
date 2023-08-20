@@ -1,3 +1,56 @@
 {
-  "create_account": "Create an Account"
+  "create_account": "Create an Account",
+  "slides": {
+    "road": {
+      "title": "Carbon Emissions Surge",
+      "desc": "Each year, human activities release over 40 billion tons of carbon dioxide into the atmosphere, exacerbating global warming and causing extreme weather events."
+    },
+    "stars": {
+      "title": "Biodiversity Loss Accelerates",
+      "desc": "Due to habitat destruction and climate change, species are going extinct at a rate 1,000 times faster than the natural background rate, jeopardizing ecosystems and food security."
+    },
+    "wave": {
+      "title": "Melting Polar Ice",
+      "desc": "Polar ice is disappearing at an alarming rate, with the Arctic losing 12.8% of its ice cover each decade. This contributes to rising sea levels and threatens coastal communities."
+    }
+  },
+  "email_sent": "We have sent a confirmation email to",
+  "thanks_for": "Thank you for {{action}}!",
+  "signing_in": "signing in",
+  "signing_up": "signing up",
+  "already_member": "Already a member?",
+  "dont_have_account": "Don't have an account yet?",
+  "sign_in": "Sign in",
+  "sign_up": "Sign up now",
+  "notification": {
+    "sign_up": {
+      "title": "Welcome on board!",
+      "message": "You have successfully signed up, your data is now in the console, ready to be shipped to your backend :)"
+    },
+    "sign_in": {
+      "title": "Welcome on board!",
+      "message": "You have successfully signed in, Your data is now in the console, ready to be shipped to your backend :)"
+    }
+  },
+  "firstname_label": "First Name",
+  "firstname_placeholder": "Your first name",
+  "lastname_label": "Last Name",
+  "lastname_placeholder": "Your last name",
+  "email_label": "Email Address",
+  "email_placeholder": "Your Email",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "privacy_label": "By regestering you agree with our Terms, Privacy, Policy.",
+  "sign_up_benefits": "Sign up for early sale access plus tailored new arrivals and promotions.",
+  "keep_signed_in": "Keep me signed in",
+  "sign_up_btn": "Sign Up",
+  "sign_in_btn": "Sign In",
+  "sign_in_title": "Sign In to Help Save Nature",
+  "validation": {
+    "invalid_email": "Invalid email address",
+    "required_field": "This field is required",
+    "required_terms": "You must agree to the terms and privacy policy",
+    "password_match": "Passwords do not match",
+    "password_validation": "Password must have minimum eight characters, at least one letter and one number."
+  }
 }
