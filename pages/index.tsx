@@ -1,5 +1,5 @@
 import Layout from "@/sections/Layout";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import withCustomTranslations from "../utils/withCustomTranslations";
 
 export default function Home() {
   return (
@@ -9,10 +9,4 @@ export default function Home() {
   );
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
-}
+export const getStaticProps = withCustomTranslations();
