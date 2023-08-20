@@ -4,8 +4,9 @@ import { MantineProvider } from "@mantine/core";
 import "../styles/globals.css";
 import { Notifications } from "@mantine/notifications";
 import { AppContextProvider } from "@/contexts/AppContext";
+import { appWithTranslation } from "next-i18next";
 
-export default function App(props: AppProps) {
+function App(props: AppProps) {
   const { Component, pageProps } = props;
 
   return (
@@ -28,3 +29,5 @@ export default function App(props: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);
