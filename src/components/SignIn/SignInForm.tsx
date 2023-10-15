@@ -20,7 +20,7 @@ export function SignInForm() {
   const { t } = useTranslation();
   const { setFormSubmitted, setEmail } = useAppContext();
 
-  const audio = new Audio("/yay.mp3");
+  const audio = new Audio("/effortless_form/yay.mp3");
 
   const handlePlayAudio = () => {
     audio.play();
