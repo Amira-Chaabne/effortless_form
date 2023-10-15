@@ -34,7 +34,7 @@ export default function InfoCarousel() {
       <Image
         src={image.src}
         alt={image.alt}
-        layout="fill"
+        fill
         objectFit="cover"
         className="border rounded-md"
       />

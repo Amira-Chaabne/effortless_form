@@ -20,6 +20,12 @@ export function SignInForm() {
   const { t } = useTranslation();
   const { setFormSubmitted, setEmail } = useAppContext();
 
+  const audio = new Audio("/yay.mp3");
+
+  const handlePlayAudio = () => {
+    audio.play();
+  };
+
   const form = useForm<FormValues>({
     initialValues: {
       email: "",
@@ -36,12 +42,12 @@ export function SignInForm() {
   });
 
   function handleForm(values: FormValues) {
-    console.log(values);
     notifications.show({
       title: t("notification.sign_in.title"),
       message: t("notification.sign_in.message"),
       color: "green",
     });
+    handlePlayAudio();
     form.reset();
     setEmail(values.email);
     setFormSubmitted(true);
